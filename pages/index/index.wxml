@@ -15,10 +15,9 @@
             <textarea class="main-text" type="text" value="{{mainText}}" bindinput="mainTextInput" disabled="{{btnEnable}}" />
 
             <view class="info">
-                <input type="nickname" class="weui-input nick-name" name="nickname" value="{{userInfo.nickName||''}}" bindchange="onInput" placeholder="请输入名字" />
+                <input type="nickname" class="weui-input nick-name" name="nickname" value="{{userInfo.nickName||''}}" bindchange="onInput" placeholder="请输入名字" disabled="{{!isMe}}"/>
 
-                <button class="avatar-warper" open-type="chooseAvatar" bindchooseavatar="onChooseAvatar">
-                    <!-- 添加头像 -->
+                <button wx:if="{{isMe}}" class="avatar-warper" open-type="chooseAvatar" bindchooseavatar="onChooseAvatar">
                     <view wx:if="{{!userInfo.isAvatar}}">添加头像</view>
                     <image wx:else class="avatar" src="{{userInfo.avatar||''}}"></image>
                 </button>
