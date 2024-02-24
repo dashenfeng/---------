@@ -47,7 +47,7 @@ Page({
     // 取得页面最新的输入值
     toNameInput(e) {
         const { value } = e.detail
-        console.log(e.detail, 'detail');
+        // console.log(e.detail, 'detail');
         this.setData({
             toName: value,
         })
