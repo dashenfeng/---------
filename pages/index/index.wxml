@@ -1,8 +1,31 @@
 <!--index.wxml-->
-<navigation-bar title="Weixin" back="{{false}}" color="black" background="#FFF"></navigation-bar>
+<!-- <navigation-bar title="贺卡" back="{{false}}" front-color="white"  background-color="#000000"></navigation-bar> -->
+<navigation-bar title="贺卡" front-color="#000000" background-color="#000000" />
+
 <scroll-view class="scrollarea" scroll-y type="list">
-  <view class="container">
-    Hello World111112
-    
-  </view>
+
+    <view class="music-icon">
+        <image wx:if="{{!isPlay}}" bind:tap="musicControl" src="../../assest/yinlebofang.png" alt="音乐播放" />
+        <image wx:else bind:tap="musicControl" src="../../assest/yinlezanting.png" alt="音乐暂停" />
+    </view>
+    <view class="box">
+        <image src="../../assest/star.jpg" alt="star" mode="widthFix" class="background" />
+        <view class="card">
+            <input class="to-name" type="text" value="{{toName}}" bindinput="toNameInput" disabled="{{btnEnable}}" />
+            <textarea class="main-text" type="text" value="{{mainText}}" bindinput="mainTextInput" disabled="{{btnEnable}}" />
+
+            <view class="info">
+                <input type="nickname" class="weui-input nick-name" name="nickname" value="{{userInfo.nickName||''}}" bindchange="onInput" placeholder="请输入名字" />
+
+                <button class="avatar-warper" open-type="chooseAvatar" bindchooseavatar="onChooseAvatar">
+                    <!-- 添加头像 -->
+                    <view wx:if="{{!userInfo.isAvatar}}">添加头像</view>
+                    <image wx:else class="avatar" src="{{userInfo.avatar||''}}"></image>
+                </button>
+            </view>
+        </view>
+        <button wx:if="{{isMe}}" class="btn" open-type="share">分享给好友</button>
+        <!-- <button wx:if="{{!isMe}}" class="btn" open-type="share">我也要制作</button> -->
+
+    </view>
 </scroll-view>

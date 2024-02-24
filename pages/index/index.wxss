@@ -1,10 +1,98 @@
 /**index.wxss**/
 page {
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    color: white;
 }
+
+.music-icon{
+    position: fixed;
+    top: 50px;
+    left: 10px;
+    width: 30px;
+    height: 30px;
+    /* background-color: greenyellow; */
+}
+.music-icon image{
+    height: 100%;
+    width: 100%;
+}
+
 .scrollarea {
-  flex: 1;
-  overflow-y: hidden;
+    position: relative;
+    flex: 1;
+    overflow-y: hidden;
+}
+
+.background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    z-index: -100;
+}
+
+/* 贺卡部分 */
+.card {
+    height: 300px;
+    position: relative;
+}
+
+.card .to-name {
+    color: gray;
+    margin: 20px;
+}
+
+.card .main-text {
+    color: gray;
+    margin: 20px;
+    height: 100px;
+    word-wrap: break-word;
+}
+
+.card .from-name {
+    color: rgb(230, 214, 127);
+    text-align: right;
+    margin: 20px;
+}
+
+.btn {
+    background-color: rgb(89, 89, 116);
+    color: rgb(230, 214, 127);
+}
+
+.info {
+    position: relative;
+    /* width: 100rpx;
+    height: 100rpx; */
+}
+/* 名字 */
+.nick-name {
+    color: gray;
+    text-align: right;
+    margin: 10px;
+}
+/* 头像 */
+.avatar-warper {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    z-index: 1;
+    position: absolute;
+    right: -10px;
+    /* 设置透明 */
+    background-color: transparent;
+    border-style: none;
+    /* color: rgb(230, 214, 127); */
+    color: gray;
+}
+
+.avatar {
+    display: block;
+    width: 100rpx;
+    height: 100rpx;
+    border-radius: 50%;
 }
